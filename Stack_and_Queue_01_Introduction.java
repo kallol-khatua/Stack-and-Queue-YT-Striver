@@ -49,6 +49,11 @@ class StackNode {
         this.data = data;
         this.next = null;
     }
+
+    StackNode(int data, StackNode next) {
+        this.data = data;
+        this.next = next;
+    }
 }
 
 class StackUsingLinkedList {
@@ -56,8 +61,7 @@ class StackUsingLinkedList {
     int size = 0;
 
     public void push(int n) {
-        StackNode temp = new StackNode(n);
-        temp.next = top;
+        StackNode temp = new StackNode(n, top);
         top = temp;
         size++;
         System.out.println(n + " added to the stack");
