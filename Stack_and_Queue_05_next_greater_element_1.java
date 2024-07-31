@@ -20,7 +20,7 @@ public class Stack_and_Queue_05_next_greater_element_1 {
 
         for (int i = n - 1; i >= 0; i--) {
             int currVal = arr[i];
-            while (!st.isEmpty() && currVal > st.peek()) {
+            while (!st.isEmpty() && currVal >= st.peek()) {
                 st.pop();
             }
             if(st.isEmpty()) {

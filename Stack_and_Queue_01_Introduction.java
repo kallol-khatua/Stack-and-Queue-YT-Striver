@@ -93,6 +93,62 @@ class StackUsingLinkedList {
     }
 }
 
+class QueueNode {
+    int val;
+    QueueNode next;
+
+    QueueNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+class QueueUsingLinkedList {
+    QueueNode start = null;
+    QueueNode end = null;
+    int size;
+
+    public void push(int n) {
+        if (start == null) {
+            QueueNode temp = new QueueNode(n);
+            start = temp;
+            end = temp;
+            size = 1;
+        } else {
+            QueueNode temp = new QueueNode(n);
+            end.next = temp;
+            end = temp;
+            size++;
+        }
+        System.out.println(n + " added to the queue.");
+    }
+
+    public void pop() {
+        if (start != null) {
+            int data = start.val;
+            QueueNode next = start.next;
+            start.next = null;
+            start = next;
+            size--;
+            System.out.println("Element is popped = " + data);
+        } else {
+            System.out.println("Queue is empty");
+        }
+    }
+
+    public void peek() {
+        if (start != null) {
+            System.out.println("Peek element is = " + start.val);
+        } else {
+            System.out.println("Queue is empty");
+        }
+    }
+
+    public void size() {
+        System.out.println("Size of the queue " + size);
+    }
+}
+
 public class Stack_and_Queue_01_Introduction {
     public static void main(String[] args) {
 //        implementation of stack using array
@@ -113,33 +169,51 @@ public class Stack_and_Queue_01_Introduction {
 
 
 //        implementation of stack using linked list
-        StackUsingLinkedList stackUsingLinkedList = new StackUsingLinkedList();
-        stackUsingLinkedList.peek();
-        stackUsingLinkedList.pop();
-        stackUsingLinkedList.push(4);
-        stackUsingLinkedList.push(1);
-        stackUsingLinkedList.push(3);
-        stackUsingLinkedList.push(9);
-        stackUsingLinkedList.size();
-        stackUsingLinkedList.peek();
-        stackUsingLinkedList.pop();
-        stackUsingLinkedList.size();
-        stackUsingLinkedList.push(8);
-        stackUsingLinkedList.push(10);
-        stackUsingLinkedList.push(2);
-        stackUsingLinkedList.size();
+//        StackUsingLinkedList stackUsingLinkedList = new StackUsingLinkedList();
+//        stackUsingLinkedList.peek();
+//        stackUsingLinkedList.pop();
+//        stackUsingLinkedList.push(4);
+//        stackUsingLinkedList.push(1);
+//        stackUsingLinkedList.push(3);
+//        stackUsingLinkedList.push(9);
+//        stackUsingLinkedList.size();
+//        stackUsingLinkedList.peek();
+//        stackUsingLinkedList.pop();
+//        stackUsingLinkedList.size();
+//        stackUsingLinkedList.push(8);
+//        stackUsingLinkedList.push(10);
+//        stackUsingLinkedList.push(2);
+//        stackUsingLinkedList.size();
 
 
-//        TODO:
 //        implementation of stack using queue
+//        Leetcode -  225. Implement Stack using Queues
 
-//        TODO:
+
 //        implementation of queue using array
 
-//        TODO:
-//        implementation of queue using linked list
 
-//        TODO:
+//        implementation of queue using linked list
+        QueueUsingLinkedList queueUsingLinkedList = new QueueUsingLinkedList();
+        queueUsingLinkedList.peek();
+        queueUsingLinkedList.pop();
+        queueUsingLinkedList.push(4);
+        queueUsingLinkedList.push(1);
+        queueUsingLinkedList.push(3);
+        queueUsingLinkedList.push(9);
+        queueUsingLinkedList.size();
+        queueUsingLinkedList.peek();
+        queueUsingLinkedList.pop();
+        queueUsingLinkedList.size();
+        queueUsingLinkedList.peek();
+        queueUsingLinkedList.push(8);
+        queueUsingLinkedList.push(10);
+        queueUsingLinkedList.push(2);
+        queueUsingLinkedList.size();
+
+
+
 //        implementation of queue using stack
+//        Leetcode - 232. Implement Queue using Stacks
     }
 }

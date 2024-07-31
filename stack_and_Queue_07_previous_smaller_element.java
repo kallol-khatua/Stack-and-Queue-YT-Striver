@@ -20,7 +20,7 @@ public class stack_and_Queue_07_previous_smaller_element {
 
         for (int i = 0; i < n; i++) {
             int currVal = arr[i];
-            while(!st.isEmpty() && currVal < st.peek()) {
+            while(!st.isEmpty() && currVal <= st.peek()) {
                 st.pop();
             }
             if(st.isEmpty()) {
